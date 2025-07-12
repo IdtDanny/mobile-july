@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           ProductCard(
-            name: "Bycicle",
+            name: "Bicycle",
             price: 29.99,
             imageUrl: "https://picsum.photos/seed/p1/600/400",
           ),
