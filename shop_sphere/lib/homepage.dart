@@ -14,22 +14,36 @@ class HomePage extends StatelessWidget {
         title: Text("ShopSphere", style: TextStyle(color: Colors.black)),
         // backgroundColor: Colors.blue,
       ),
-      body: ListView(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ProductCard(
-            name: "Bicycle",
-            price: 29.99,
-            imageUrl: "https://picsum.photos/seed/p1/600/400",
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Featured Products",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
           ),
-          ProductCard(
-            name: "House",
-            price: 46.99,
-            imageUrl: "https://picsum.photos/seed/p2/600/400",
-          ),
-          ProductCard(
-            name: "Old Car",
-            price: 12.99,
-            imageUrl: "https://picsum.photos/seed/p4/600/400",
+          Expanded(
+            child: ListView(
+              children: [
+                ProductCard(
+                  name: "Bicycle",
+                  price: 29.99,
+                  imageUrl: "https://picsum.photos/seed/p1/600/400",
+                ),
+                ProductCard(
+                  name: "House",
+                  price: 46.99,
+                  imageUrl: "https://picsum.photos/seed/p2/600/400",
+                ),
+                ProductCard(
+                  name: "Old Car",
+                  price: 12.99,
+                  imageUrl: "https://picsum.photos/seed/p4/600/400",
+                ),
+              ],
+            ),
           ),
         ],
       ),
