@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_sphere/data/mock_data.dart';
 import 'package:shop_sphere/widget/product_card.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,24 +26,11 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: ListView(
-              children: [
-                ProductCard(
-                  name: "Bicycle",
-                  price: 29.99,
-                  imageUrl: "https://picsum.photos/seed/p1/600/400",
-                ),
-                ProductCard(
-                  name: "House",
-                  price: 46.99,
-                  imageUrl: "https://picsum.photos/seed/p2/600/400",
-                ),
-                ProductCard(
-                  name: "Old Car",
-                  price: 12.99,
-                  imageUrl: "https://picsum.photos/seed/p4/600/400",
-                ),
-              ],
+            child: ListView.builder(
+              itemCount: mockData.length,
+              itemBuilder: (context, int index) {
+                return ProductCard(prod: mockData[index]);
+              },
             ),
           ),
         ],

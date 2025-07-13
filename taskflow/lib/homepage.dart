@@ -10,14 +10,27 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(elevation: 2, title: Text('TaskFlow Home')),
 
       // body: Center(child: Text('No tasks yet..')),
-      body: ListView(
-        children: const [
-          SizedBox(height: 8),
-          TaskItem(title: 'Finished Module of Flutter Course'),
-          TaskItem(title: 'Submit the weekly report'),
-          TaskItem(title: 'Call the client Back'),
-          TaskItem(title: 'Grocery shopping for the week'),
-          TaskItem(title: 'Plan the weekend trip'),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Task List',
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              children: const [
+                SizedBox(height: 8),
+                TaskItem(taskTitle: 'Finished Module of Flutter Course'),
+                TaskItem(taskTitle: 'Submit the weekly report'),
+                TaskItem(taskTitle: 'Call the client Back'),
+                TaskItem(taskTitle: 'Grocery shopping for the week'),
+                TaskItem(taskTitle: 'Plan the weekend trip'),
+              ],
+            ),
+          ),
         ],
       ),
     );
