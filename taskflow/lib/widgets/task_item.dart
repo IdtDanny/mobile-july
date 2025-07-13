@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:taskflow/models/task.dart';
 
 class TaskItem extends StatefulWidget {
-  final String taskTitle;
-  const TaskItem({super.key, required this.taskTitle});
+  final Task task;
+  const TaskItem({super.key, required this.task});
 
   @override
   State<TaskItem> createState() => _TaskItemState();
@@ -25,7 +26,7 @@ class _TaskItemState extends State<TaskItem> {
           },
         ),
         title: Text(
-          widget.taskTitle,
+          widget.task.taskTitle,
           style: TextStyle(
             decoration: _isChecked
                 ? TextDecoration.lineThrough
@@ -36,7 +37,7 @@ class _TaskItemState extends State<TaskItem> {
         subtitle: const Text('Due Next Week'),
         trailing: IconButton(
           onPressed: () {
-            print('Item ${widget.taskTitle} deleted!');
+            print('Item ${widget.task.taskTitle} deleted!');
           },
           icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
         ),
