@@ -45,6 +45,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 5.0),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +69,6 @@ class ProductCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(width: 90.0),
                     Text(
                       'Return Policy: ${prod.returnPolicy}',
                       style: TextStyle(
