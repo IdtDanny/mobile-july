@@ -51,7 +51,7 @@ class ProductCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Shipping Cost: \$${prod.shippingCost.toStringAsFixed(2)}',
+                          'Shipping: \$${prod.shippingCost.toStringAsFixed(2)}',
                           style: TextStyle(
                             fontSize: 12.0,
                             fontStyle: FontStyle.italic,
