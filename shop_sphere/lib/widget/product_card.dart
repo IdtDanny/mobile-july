@@ -36,12 +36,55 @@ class ProductCard extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
+                const SizedBox(height: 4.0),
+                Text(
+                  prod.description,
+                  style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 5.0),
+                Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Shipping Cost: \$${prod.shippingCost.toStringAsFixed(2)}',
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.green[700],
+                          ),
+                        ),
+                        const SizedBox(height: 5.0),
+                        Text(
+                          'Price: \$${prod.price.toStringAsFixed(2)}',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.red[700],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(width: 90.0),
+                    Text(
+                      'Return Policy: ${prod.returnPolicy}',
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.grey[500],
+                      ),
+                    ),
+                  ],
+                ),
                 const SizedBox(height: 6.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '\$${prod.price.toStringAsFixed(2)}',
+                      '\$${prod.totalPrice.toStringAsFixed(2)}',
                       style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w600,
