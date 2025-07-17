@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:shop_sphere/homepage.dart';
-import 'package:shop_sphere/widget/product_card.dart';
+import 'package:shop_sphere/pages/product_page_details.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/',
