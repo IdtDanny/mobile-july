@@ -19,7 +19,7 @@ class ProductTile extends StatelessWidget {
             ),
             child: Image.network(
               prod.imageUrl,
-              height: 150.0,
+              height: 130.0,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
@@ -37,6 +37,14 @@ class ProductTile extends StatelessWidget {
                   children: [
                     Text(prod.brand, style: TextStyle(fontSize: 12,),),
                     Text('RWF ${prod.price}', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
+                  ],
+                ),
+                const SizedBox(height: 4.0,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(''),
+                    Text(prod.checkAvailability(), style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic, color: Colors.green),),
                   ],
                 ),
               ],

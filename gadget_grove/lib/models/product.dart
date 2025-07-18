@@ -14,4 +14,6 @@ class Product {
     required this.imageUrl,
     required this.inStock, 
   });
+
+  String checkAvailability() => inStock ? 'In Stock' : 'Out of Stock';
 }
