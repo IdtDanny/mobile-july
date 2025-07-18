@@ -19,7 +19,7 @@ class ProductTile extends StatelessWidget {
             ),
             child: Image.network(
               prod.imageUrl,
-              height: 130.0,
+              height: 120.0,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
@@ -43,8 +43,19 @@ class ProductTile extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(''),
-                    Text(prod.checkAvailability(), style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500, fontStyle: FontStyle.italic, color: Colors.green),),
+                    Text(
+                      prod.checkAvailability(), 
+                      style: TextStyle(
+                        fontSize: 10, 
+                        fontWeight: FontWeight.w500, 
+                        fontStyle: FontStyle.italic, 
+                        color: Colors.green
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {}, 
+                      child: Icon(Icons.add_shopping_cart),
+                    ),
                   ],
                 ),
               ],
