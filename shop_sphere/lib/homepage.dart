@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shop_sphere/data/mock_data.dart';
 import 'package:shop_sphere/widget/product_card.dart';
 
@@ -10,7 +11,31 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
-        actions: [Icon(Icons.person), Icon(Icons.more_vert)],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart_outlined),
+            onPressed: () {},
+          ),
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'Register') {
+                context.push('/register');
+              } else {
+                context.push('/product-upload');
+              }
+            },
+            itemBuilder: (context) => <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'Register',
+                child: Text('Register'),
+              ),
+              const PopupMenuItem<String>(
+                value: 'Upload',
+                child: Text('Upload Product'),
+              ),
+            ],
+          ),
+        ],
         leading: Icon(Icons.menu),
         title: Text("ShopSphere", style: TextStyle(color: Colors.black)),
         // backgroundColor: Colors.blue,

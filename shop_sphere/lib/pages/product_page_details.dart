@@ -37,9 +37,31 @@ class ProductPageDetails extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(12.0),
-              child: Text(
-                'Product Details for ID: $productId',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Product Details for ID: $productId',
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(prod.description, style: TextStyle(fontSize: 16)),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Price: \$${prod.price.toStringAsFixed(2)}',
+                    style: TextStyle(fontSize: 20, color: Colors.green),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Shipping Cost: \$${prod.shippingCost.toStringAsFixed(2)}',
+                    style: TextStyle(fontSize: 16, color: Colors.blueGrey),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Return Policy: ${prod.returnPolicy}',
+                    style: TextStyle(fontSize: 16, color: Colors.redAccent),
+                  ),
+                ],
               ),
             ),
           ],
