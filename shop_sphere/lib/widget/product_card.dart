@@ -10,7 +10,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-          context.go('/product/${prod.id}');
+        context.push('/product/${prod.id}');
       },
       child: Card(
         elevation: 2.0,
@@ -37,7 +37,10 @@ class ProductCard extends StatelessWidget {
                 children: [
                   Text(
                     prod.name,
-                    style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -45,7 +48,7 @@ class ProductCard extends StatelessWidget {
                   Text(
                     prod.description,
                     style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
-                    maxLines: 2,
+                    maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 5.0),
