@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskflow/models/task.dart';
+import 'package:go_router/go_router.dart';
 
 class TaskItem extends StatefulWidget {
   final Task task;
@@ -47,10 +48,12 @@ class _TaskItemState extends State<TaskItem> {
           },
           icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
         ),
+        // onTap: () {
+        //   setState(() {
+        //     _isChecked = !_isChecked;
+        //   });
         onTap: () {
-          setState(() {
-            _isChecked = !_isChecked;
-          });
+          context.push('/task/${widget.task.id}');
         },
       ),
     );

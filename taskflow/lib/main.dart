@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taskflow/homepage.dart';
+import 'package:taskflow/app_router.dart';
 
 void main() => runApp(const TaskFlowApp());
 
@@ -8,10 +8,11 @@ class TaskFlowApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRoute,
       debugShowCheckedModeBanner: false,
       title: "TaskFlow",
-      home: HomePage(),
+      // home: HomePage(),
     );
   }
 }

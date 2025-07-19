@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taskflow/data/mock_data.dart';
 import 'package:taskflow/widgets/task_item.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,8 +10,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(elevation: 2, title: Text('TaskFlow Home')),
-
-      // body: Center(child: Text('No tasks yet..')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.push('/task/new');
+        },
+        child: Icon(Icons.add),
+      ),
       body: Column(
         children: [
           Padding(
