@@ -3,16 +3,16 @@ import 'package:gadget_grove/models/product.dart';
 List<Product> mockData = [
   Product(
     id: '1',
-    name: 'Modern Accent Chair',
-    price: 299.99,
+    name: 'Chair',
+    price: 10000,
     brand: 'Bamboo',
     imageUrl: 'https://picsum.photos/seed/chair/600/400',
     inStock: true,
   ),
   Product(
     id: '2',
-    name: 'Desk Lamp',
-    price: 79.50,
+    name: 'Lamp',
+    price: 7000,
     brand: 'K',
     imageUrl: 'https://picsum.photos/seed/lamp/600/400',
     inStock: true,
@@ -20,33 +20,33 @@ List<Product> mockData = [
   Product(
     id: '3',
     name: 'Shoes',
-    price: 199.99,
+    price: 19999,
     brand: 'Nike',
     imageUrl: 'https://picsum.photos/seed/laptop/600/400',
     inStock: true,
   ),
   Product(
     id: '4',
-    name: 'Stylish Sunglasses',
-    price: 89.99,
+    name: 'Sunglasses',
+    price: 3500,
     brand: 'Stylus',
     imageUrl: 'https://picsum.photos/seed/sunglasses/600/400',
     inStock: false,
   ),
   Product(
     id: '5',
-    name: 'Leather Wallet',
-    price: 49.99,
+    name: 'Wallet',
+    price: 5000,
     brand: 'Masai',
     imageUrl: 'https://picsum.photos/seed/wallet/600/400',
-    inStock: true
+    inStock: true,
   ),
   Product(
     id: '6',
     name: 'Watch',
-    price: 54.34,
+    price: 15000,
     brand: 'Rolls',
     imageUrl: 'https://picsum.photos/seed/watch/600/400',
-    inStock: true
+    inStock: true,
   ),
 ];

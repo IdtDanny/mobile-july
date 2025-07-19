@@ -9,13 +9,22 @@ class ProductPageDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Product prod = mockData.firstWhere((p) => p.id == productId, orElse: (){
-      return const Product(id: 'error', name: 'Product Not Found', price: 0, imageUrl: '', description: '', returnPolicy: '', shippingCost: 0);
-    });
+    final Product prod = mockData.firstWhere(
+      (p) => p.id == productId,
+      orElse: () {
+        return const Product(
+          id: 'error',
+          name: 'Product Not Found',
+          price: 0,
+          imageUrl: '',
+          description: '',
+          returnPolicy: '',
+          shippingCost: 0,
+        );
+      },
+    );
     return Scaffold(
-      appBar: AppBar(
-        title: Text(prod.name),
-      ),
+      appBar: AppBar(title: Text(prod.name)),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

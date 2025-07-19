@@ -19,41 +19,63 @@ class ProductTile extends StatelessWidget {
             ),
             child: Image.network(
               prod.imageUrl,
-              height: 120.0,
+              height: 90.0,
               width: double.infinity,
               fit: BoxFit.cover,
             ),
           ),
 
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(prod.name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
-                const SizedBox(height: 8.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(prod.brand, style: TextStyle(fontSize: 12,),),
-                    Text('RWF ${prod.price}', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
-                  ],
-                ),
-                const SizedBox(height: 4.0,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      prod.checkAvailability(), 
+                      prod.name,
                       style: TextStyle(
-                        fontSize: 10, 
-                        fontWeight: FontWeight.w500, 
-                        fontStyle: FontStyle.italic, 
-                        color: Colors.green
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
                       ),
                     ),
+                    Text(
+                      prod.brand,
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 6.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          prod.checkAvailability(),
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.green,
+                          ),
+                        ),
+                        Text(
+                          'RWF ${prod.price}',
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                     ElevatedButton(
-                      onPressed: () {}, 
+                      onPressed: () {},
                       child: Icon(Icons.add_shopping_cart),
                     ),
                   ],

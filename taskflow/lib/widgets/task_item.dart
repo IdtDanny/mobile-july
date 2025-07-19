@@ -10,7 +10,13 @@ class TaskItem extends StatefulWidget {
 }
 
 class _TaskItemState extends State<TaskItem> {
-  bool _isChecked = false;
+  late bool _isChecked = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _isChecked = widget.task.isCompleted;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +40,7 @@ class _TaskItemState extends State<TaskItem> {
             color: _isChecked ? Colors.red : null,
           ),
         ),
-        subtitle: const Text('Due Next Week'),
+        subtitle: Text('Due: ${widget.task.dueDate}'),
         trailing: IconButton(
           onPressed: () {
             print('Item ${widget.task.taskTitle} deleted!');
