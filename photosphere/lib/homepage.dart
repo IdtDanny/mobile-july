@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
         itemCount: mockPost.length,
         itemBuilder: (context, index) {
-          return PostCard(post: mockPost[index], user: mockUser[index]);
+          return PostCard(post: mockPost[index]);
         },
       ),
     );

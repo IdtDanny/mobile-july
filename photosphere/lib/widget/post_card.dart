@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:photosphere/data/mock_data.dart';
 import 'package:photosphere/models/post.dart';
 import 'package:photosphere/models/user.dart';
 
 class PostCard extends StatelessWidget {
   final Post post;
-  final User user;
-  const PostCard({super.key, required this.post, required this.user});
+  const PostCard({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {
+    final user = mockUser.firstWhere(
+      (u) => u.userId == post.userId,
+      orElse: () {
+        return User(userId: 'error', username: 'Unknown', avatarUrl: 'unknown');
+      }, 
+    );
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(12.0),

@@ -15,26 +15,33 @@ List<User> mockUser = [
   User(
     userId: '3',
     username: 'DoneLay',
-    avatarUrl: 'https://picsum.photos/seed/kigali/600/400',
+    avatarUrl: 'https://picsum.photos/seed/giant/600/400',
   ),
 ];
 List<Post> mockPost = [
   Post(
     postId: '1',
     userId: '1',
-    imageUrl: 'https://picsum.photos/seed/kigali/600/400',
+    imageUrl: 'https://picsum.photos/seed/car/600/400',
     caption: 'caption1',
     likes: '3 likes',
   ),
   Post(
-    postId: '1',
+    postId: '2',
+    userId: '2',
+    imageUrl: 'https://picsum.photos/seed/screen/600/400',
+    caption: 'caption1',
+    likes: '3 likes',
+  ),
+  Post(
+    postId: '3',
     userId: '2',
     imageUrl: 'https://picsum.photos/seed/lake/600/400',
     caption: 'caption1',
     likes: '3 likes',
   ),
   Post(
-    postId: '1',
+    postId: '4',
     userId: '3',
     imageUrl: 'https://picsum.photos/seed/chair/600/400',
     caption: 'caption1',
