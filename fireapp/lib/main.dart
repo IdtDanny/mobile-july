@@ -1,7 +1,13 @@
 import 'package:fireapp/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(FireApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+  runApp(FireApp());
+}
 
 class FireApp extends StatelessWidget {
   const FireApp({super.key});
