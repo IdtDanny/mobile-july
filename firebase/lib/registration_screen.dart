@@ -1,4 +1,4 @@
-import 'package:fbapp/user_sevice.dart';
+import 'package:fireapp/user_service.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -55,10 +55,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('User Added Successfully!')),
         );
-        
+
         // Reset the form after successful submission.
         _formKey.currentState?.reset();
-
       } catch (e) {
         // Show an error message if the operation fails.
         ScaffoldMessenger.of(context).showSnackBar(
@@ -76,9 +75,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Add User to Firebase'),
-      ),
+      appBar: AppBar(title: const Text('Add User to Firebase')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -87,7 +84,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             children: [
               TextFormField(
                 controller: _firstNameController,
-                decoration: const InputDecoration(labelText: 'First Name', border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                  labelText: 'First Name',
+                  border: OutlineInputBorder(),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a first name';
@@ -98,7 +98,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _lastNameController,
-                decoration: const InputDecoration(labelText: 'Last Name', border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                  labelText: 'Last Name',
+                  border: OutlineInputBorder(),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a last name';
@@ -109,7 +112,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _usernameController,
-                decoration: const InputDecoration(labelText: 'Username', border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                  labelText: 'Username',
+                  border: OutlineInputBorder(),
+                ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a username';
@@ -120,7 +126,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _emailController,
-                decoration: const InputDecoration(labelText: 'Email', border: OutlineInputBorder()),
+                decoration: const InputDecoration(
+                  labelText: 'Email',
+                  border: OutlineInputBorder(),
+                ),
                 keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value == null || value.isEmpty || !value.contains('@')) {
@@ -135,7 +144,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ? const Center(child: CircularProgressIndicator())
                   : ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0)
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
                       ),
                       onPressed: _addUser,
                       child: const Text('Add User'),
