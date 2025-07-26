@@ -1,16 +1,28 @@
-import 'package:fireapp/homepage.dart';
-import 'package:fireapp/pages/add_user.dart';
-import 'package:fireapp/pages/registered_users.dart';
 import 'package:go_router/go_router.dart';
+import 'home_screen.dart';
+import 'registration_screen.dart';
+import 'view_users_screen.dart';
 
-final appRoute = GoRouter(
-  initialLocation: '/',
-  routes: [
-    GoRoute(path: '/', builder: (context, state) => HomePage()),
-    GoRoute(path: '/add-user', builder: (context, state) => AddUser()),
-    GoRoute(
-      path: '/registered',
-      builder: (context, state) => RegisteredUsers(),
-    ),
-  ],
-);
+class AppRouter {
+  // Create a static GoRouter instance.
+  static final GoRouter router = GoRouter(
+    // The initial location of the app.
+    initialLocation: '/',
+    
+    // Define the application routes.
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: '/register',
+        builder: (context, state) => const RegistrationScreen(),
+      ),
+      GoRoute(
+        path: '/view-users',
+        builder: (context, state) => const ViewUsersScreen(),
+      ),
+    ],
+  );
+}
