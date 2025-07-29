@@ -24,7 +24,8 @@ class RestaurantDetailsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Details'),
+        title: Text('Details', style: TextStyle(color: Theme.of(context).primaryColorLight),),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +39,7 @@ class RestaurantDetailsPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(resto.name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0, color: Colors.blueAccent),),
+                    Text(resto.name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: Theme.of(context).primaryColor),),
                     Text(resto.cuisine, style: TextStyle(fontSize: 12.0, color: Colors.blueGrey, fontStyle: FontStyle.italic),),
                   ],
                 ),

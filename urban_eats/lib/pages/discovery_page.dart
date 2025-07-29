@@ -11,8 +11,8 @@ class DiscoveryPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 2.0,
-        title: Center(child: Text('Welcome to Urban Eats', style: TextStyle(fontWeight: FontWeight.bold),)),
-        backgroundColor: AppBarTheme.of(context).backgroundColor,
+        title: Center(child: Text('Welcome to Urban Eats', style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColorLight),)),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,16 +25,16 @@ class DiscoveryPage extends StatelessWidget {
                 Text(
                   'Find Your Next Meal',
                   style: TextStyle(
-                    fontSize: 18.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
                 const SizedBox(height: 15.0,),
                 TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.search),
-                    hint: Text('Search restaurants...'),                    
+                    prefixIcon: Icon(Icons.search, color: Theme.of(context).primaryColor,),
+                    hint: Text('Search restaurants...', style: TextStyle(color: Theme.of(context).primaryColorDark),),                    
                   ),
                 ),
               ],
@@ -54,7 +54,7 @@ class DiscoveryPage extends StatelessWidget {
         onPressed: () {
           context.push('/add-restaurant');
         },
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Theme.of(context).primaryColor,
         child: Icon(Icons.add, color: Colors.white,),
       ),
     );
