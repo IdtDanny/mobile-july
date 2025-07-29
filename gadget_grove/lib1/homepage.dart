@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gadget_grove/widget/product_tile.dart';
+import 'package:gadget_grove/widgets/product_tile.dart';
 import 'package:gadget_grove/data/mock_data.dart';
 
 class HomePage extends StatelessWidget {

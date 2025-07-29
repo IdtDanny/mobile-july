@@ -12,6 +12,8 @@ class Product {
     required this.brand,
     required this.price,
     required this.imageUrl,
-    required this.inStock,
+    required this.inStock, 
   });
+
+  String checkAvailability() => inStock ? 'In Stock' : 'Out of Stock';
 }
