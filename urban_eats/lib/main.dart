@@ -12,6 +12,7 @@ class UrbanEats extends StatelessWidget {
       routerConfig: appRoute,
       debugShowCheckedModeBanner: false,
       title: 'Urban Eats App',
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal)),
     );
   }
 }

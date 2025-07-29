@@ -12,6 +12,7 @@ class DiscoveryPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 2.0,
         title: Center(child: Text('Welcome to Urban Eats', style: TextStyle(fontWeight: FontWeight.bold),)),
+        backgroundColor: AppBarTheme.of(context).backgroundColor,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
