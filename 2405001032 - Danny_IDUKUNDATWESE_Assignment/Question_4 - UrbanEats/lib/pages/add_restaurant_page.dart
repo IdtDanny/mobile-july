@@ -48,7 +48,7 @@ class _AddRestaurantPageState extends State<AddRestaurantPage> {
           duration: Duration(seconds: 5),
         ),
       );
-      context.push('/');
+      context.pop('/');
     }
   }
 
