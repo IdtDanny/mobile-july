@@ -161,9 +161,12 @@ class _AddRestaurantPageState extends State<AddRestaurantPage> {
               SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: _submitForm,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Text('Add Restaurant'),
+                  child: Text('Add Restaurant', style: TextStyle(fontSize: 14.0, color: Colors.white),),
                 ),
               ),
             ],
